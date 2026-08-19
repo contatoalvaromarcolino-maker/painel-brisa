@@ -233,11 +233,3 @@ td.num{font-variant-numeric:tabular-nums}
   .deck-nav{bottom:12px; right:12px; left:12px; justify-content:center}
   .deck-nav .hint{display:none}
 }
-
-/* botao da capa: abre o quadro real no ClickUp */
-.cap-cta{display:inline-flex; align-items:center; gap:9px; margin-top:22px;
-  padding:13px 24px; border-radius:999px; background:var(--orange); color:#fff;
-  font-size:14.5px; font-weight:800; letter-spacing:.01em; text-decoration:none;
-  box-shadow:0 5px 16px rgba(255,135,40,.34); transition:transform .15s, box-shadow .15s}
-.cap-cta::after{content:"↗"; font-size:16px; font-weight:800; line-height:1}
-.cap-cta:hover{transform:translateY(-1px); box-shadow:0 7px 20px rgba(255,135,40,.46)}
