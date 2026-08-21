@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BS VILLE — Comentários consolidados e plano de ação · 21/08/2026</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --indigo:#3C3F99; --indigo-deep:#2A2D75; --indigo-ink:#1F2158;
+  --orange:#FF8728; --orange-deep:#E86F12; --orange-soft:#FFE4CC;
+  --panel:#F1F3FA; --panel-zebra:#E6E9F5;
+  --text:#1E2233; --muted:#6C7390; --line:#DBE0EC;
+  --ok-bg:#DCFCE9; --ok-fg:#0A6B41;
+  --at-bg:#FFF1D6; --at-fg:#8A5300;
+  --cr-bg:#FDE3E1; --cr-fg:#9B241B;
+  --alvaro:#3C3F99; --judson:#0F8A6B; --ia:#E86F12;
+}
+body{background:var(--panel-zebra);font-family:Inter,Arial,sans-serif;color:var(--text);
+     line-height:1.5;padding:0 0 60px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{background:linear-gradient(120deg,var(--indigo) 0%,var(--indigo-deep) 65%,var(--indigo-ink) 100%);
+       color:#fff;padding:40px 0 34px}
+header .wrap{display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-soft)}
+h1{font-size:30px;font-weight:900;letter-spacing:-.02em;max-width:760px}
+.hd-sub{font-size:13.5px;color:#C9CDEB;max-width:720px;line-height:1.7}
+.hd-meta{display:flex;gap:28px;margin-top:14px;flex-wrap:wrap}
+.hd-meta div{font-size:11px;color:#B4BACB}
+.hd-meta b{display:block;font-size:13px;color:#fff;font-weight:800;margin-top:2px}
+
+/* seções */
+main{padding-top:30px}
+section{margin-bottom:38px}
+.sec-hd{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.sec-mark{width:9px;height:9px;background:var(--orange);flex-shrink:0}
+.sec-hd h2{font-size:17px;font-weight:900;color:var(--indigo-deep);letter-spacing:-.01em}
+.sec-line{flex:1;height:1px;background:var(--line)}
+.sec-note{font-size:12.5px;color:var(--muted);margin:-8px 0 16px;line-height:1.7;max-width:800px}
+
+/* cards resumo */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);padding:16px 18px}
+.card .n{font-size:26px;font-weight:900;color:var(--indigo-deep)}
+.card .l{font-size:10.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+/* destaque do pedido novo */
+.destaque{background:#fff;border:1.5px solid var(--orange);border-left:6px solid var(--orange);padding:20px 24px;display:flex;gap:18px;align-items:flex-start}
+.destaque .ico{font-size:22px;flex-shrink:0}
+.destaque h3{font-size:15px;font-weight:800;color:var(--orange-deep);margin-bottom:6px}
+.destaque p{font-size:13px;color:var(--text);line-height:1.7}
+.destaque p+p{margin-top:8px}
+.destaque .fonte{font-size:11px;color:var(--muted);margin-top:8px}
+
+/* colunas de dono */
+.donos{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;align-items:start}
+.dono{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.dono-hd{padding:12px 16px;font-size:12.5px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+.dono.alvaro .dono-hd{background:var(--alvaro)}
+.dono.judson .dono-hd{background:var(--judson)}
+.dono.ia .dono-hd{background:var(--ia)}
+.dono-body{padding:6px 0}
+.acao{padding:11px 16px;border-bottom:1px solid var(--panel-zebra);font-size:12px;line-height:1.55}
+.acao:last-child{border-bottom:none}
+.acao b{color:var(--text);font-weight:700}
+.acao .dep{display:inline-block;margin-top:4px;font-size:9.5px;font-weight:800;letter-spacing:.06em;
+           text-transform:uppercase;padding:1.5px 6px;border-radius:8px}
+.dep.aberto{background:var(--at-bg);color:var(--at-fg)}
+.dep.bloqueado{background:var(--cr-bg);color:var(--cr-fg)}
+.dep.feito{background:var(--ok-bg);color:var(--ok-fg)}
+.dep.novo{background:#E4E7FA;color:var(--indigo-deep)}
+
+/* tabela tela a tela */
+table.telas{width:100%;border-collapse:collapse;background:#fff;font-size:12px}
+table.telas th{background:var(--indigo-deep);color:#fff;text-align:left;padding:9px 12px;font-size:10.5px;
+               font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+table.telas td{padding:10px 12px;border-bottom:1px solid var(--panel-zebra);vertical-align:top;line-height:1.6}
+table.telas tr:nth-child(even) td{background:var(--panel)}
+table.telas .tnum{font-weight:900;color:var(--indigo-deep);white-space:nowrap}
+.quem{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+      padding:1.5px 7px;border-radius:8px;margin-right:4px;margin-bottom:3px}
+.quem.g{background:#E4E7FA;color:var(--indigo-deep)}
+.quem.j{background:#DCF5EE;color:var(--judson)}
+.status{font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:8px;white-space:nowrap}
+.status.aberto{background:var(--at-bg);color:var(--at-fg)}
+.status.feito{background:var(--ok-bg);color:var(--ok-fg)}
+.status.confirmar{background:var(--cr-bg);color:var(--cr-fg)}
+.status.sem{background:var(--panel-zebra);color:var(--muted)}
+
+/* atenção */
+.al{display:flex;flex-direction:column;gap:8px}
+.al-i{display:flex;gap:0;border:1px solid var(--line);background:#fff}
+.al-s{width:5px;flex-shrink:0;background:var(--orange)}
+.al-i.cr .al-s{background:#C0392B}
+.al-b{padding:11px 16px;flex:1}
+.al-t{font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:3px}
+.al-i.cr .al-t{color:#9B241B}
+.al-x{font-size:12.5px;line-height:1.7;color:#4A5063}
+
+/* fontes */
+.fontes{font-size:11.5px;color:var(--muted);line-height:2}
+.fontes code{background:var(--panel);padding:1px 6px;border-radius:4px;font-size:11px;color:var(--indigo-deep)}
+
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:10.5px;color:#9096AC;text-align:center}
+
+@media (max-width:760px){
+  .cards{grid-template-columns:1fr 1fr}
+  .donos{grid-template-columns:1fr}
+  h1{font-size:24px}
+  table.telas{font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Brisa Empreendimentos · BS VILLE · Arvo Gestão e Consultoria</div>
+    <h1>Comentários consolidados e plano de ação</h1>
+    <p class="hd-sub">Tudo que o Gustavo, o Judson e o Álvaro comentaram sobre o estudo de viabilidade e o deck
+    de faseamento, juntando as três fontes que existiam soltas: a reunião de 20/08 com o Gustavo, o WhatsApp do
+    Judson e o vídeo de reconstrução gravado em 21/08. Cada item abaixo está marcado com quem tem que agir.</p>
+    <div class="hd-meta">
+      <div>Atualizado em<b>21/08/2026</b></div>
+      <div>Fontes cruzadas<b>4 (reunião, WhatsApp, vídeo, deck ao vivo)</b></div>
+      <div>Telas do deck com pedido<b>13 de 15 + capa</b></div>
+      <div>Itens novos hoje<b>Perfil e velocidade de venda</b></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="cards">
+      <div class="card"><div class="n">17</div><div class="l">Ações do Álvaro</div></div>
+      <div class="card"><div class="n">9</div><div class="l">Ações do Judson</div></div>
+      <div class="card"><div class="n">7</div><div class="l">Dependem da IA</div></div>
+      <div class="card"><div class="n">2</div><div class="l">Já feitas no deck</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-hd"><div class="sec-mark"></div><h2>Pedido de hoje — apresentação de 21/08</h2><div class="sec-line"></div></div>
+    <div class="destaque">
+      <div class="ico">📈</div>
+      <div>
+        <h3>Mostrar perfil de venda e velocidade de venda no deck</h3>
+        <p>Na apresentação ao grupo desta sexta, o Gustavo pediu para o deck mostrar o perfil de venda e a
+        velocidade de venda adotados no estudo. Esse pedido não aparece em nenhuma das fontes anteriores
+        (reunião de 20/08, WhatsApp do Judson, vídeo de reconstrução) — é item novo.</p>
+        <p>Ponto de atenção: o próprio <code>VIABIL-ENTRADA-BS-VILLE.md</code> já registra que o BS VILLE não
+        tem referência própria de velocidade e perfil de venda e que o caminho é partir do que os estudos
+        anteriores da Arvo usaram. Antes de criar a tela nova, o Álvaro precisa decidir qual referência adotar
+        — aí sim a IA monta o painel com o dado definido.</p>
+        <div class="fonte">Fonte: relato direto do Álvaro, 21/08/2026 (não gravado em transcrição)</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-hd"><div class="sec-mark"></div><h2>Plano de ação por dono</h2><div class="sec-line"></div></div>
+    <p class="sec-note">Divisão que já vale desde a reunião de 20/08: Viabil e deck são do Álvaro; planilha de
+    entrada, CAD e conferência de área são do Judson. A IA entra depois que os dois fecharem os dados — nunca
+    antes, porque refazer o deck sem o Viabil corrigido é trabalho jogado fora.</p>
+    <div class="donos">
+
+      <div class="dono alvaro">
+        <div class="dono-hd">Álvaro</div>
+        <div class="dono-body">
+          <div class="acao"><b>Decidir o perfil e a velocidade de venda</b> que o deck vai mostrar, partindo de um estudo anterior da Arvo já que o BS VILLE não tem referência própria.<span class="dep novo">Novo — hoje</span></div>
+          <div class="acao"><b>Refazer o faseamento com passo de 12 meses</b> nas oito fases, no Viabil.<span class="dep aberto">Aberto — depende do Judson fechar A5</span></div>
+          <div class="acao"><b>Rodar a permuta a 20%</b> nas oito fases do estudo 868 (hoje só existe a 20% no 865, de 4 blocos).<span class="dep aberto">Aberto desde 19/08</span></div>
+          <div class="acao"><b>Exportar de novo</b> <code>capa_viabil1.xlsx</code>, <code>fluxoest1.xlsx</code> e o <code>.VIAB</code>, com faseamento e permuta corrigidos.<span class="dep bloqueado">Bloqueado até os dois itens acima</span></div>
+          <div class="acao"><b>Salvar o estudo de 16 anos com outro nome</b> antes de sobrescrever, para não perder o cenário atual.<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Rodar o cenário de menor exposição de caixa</b> possível, comparado ao valor atual — pedido do Gustavo fora do deck.<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Decidir a grafia final</b> do nome do empreendimento — "Gulf Ville", "Golf Villa" ou "golfe vila" apareceram no vídeo com pronúncias diferentes para o mesmo nome.<span class="dep confirmar">Confirmar com o Gustavo</span></div>
+          <div class="acao"><b>Esclarecer os oito trechos inaudíveis</b> da transcrição do vídeo de 21/08 (metodologia da tela 08, "tirar a cara de Excel" da tela 12, nome do projeto de referência da tela 14, entre outros).<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Decidir se o cenário de 9 anos substitui o de 16</b> ou se os dois vão juntos para o Gustavo.<span class="dep aberto">Aberto desde 20/08</span></div>
+          <div class="acao"><b>Decidir se o pavimento suprimido entra</b> nesta rodada — muda o VGV de R$ 1,045 bi para cerca de R$ 1,200 bi e refaz o estudo inteiro.<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Confirmar com o Judson</b> se o vídeo de 21/08 já cobre o que faltava do WhatsApp truncado no slide 8, ou se ainda precisa do texto completo daquela mensagem.<span class="dep confirmar">Confirmar</span></div>
+        </div>
+      </div>
+
+      <div class="dono judson">
+        <div class="dono-hd">Judson</div>
+        <div class="dono-body">
+          <div class="acao"><b>Corrigir a coluna OBRA da linha 17</b> — ainda soma só 3 das 8 fases (R$ 147,8 mi em vez de R$ 394,1 mi).<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Checar se o bug de B26 → B27</b> contamina o cálculo inteiro da planilha ou só a célula acima.<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Fechar o faseamento de 12 meses</b> na planilha de entrada — hoje o passo salta de 24 em 24 meses (F1 08/2026, F2 08/2028...).<span class="dep aberto">Aberto — trava o B1 do Álvaro</span></div>
+          <div class="acao"><b>Guardar a versão de 16 anos</b> antes de mexer na planilha.<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Fechar a questão do CAD</b> que ficou com ele na divisão de trabalho da reunião de 20/08.<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Confirmar os 4 pavimentos-tipo</b> e a área maior que a lâmina do bloco.<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Confirmar o parâmetro da rampa do subsolo</b> — se falta margem, muda a área de garagem e volta até a planilha de entrada.<span class="dep aberto">Aberto</span></div>
+          <div class="acao"><b>Replanilhar as áreas</b> a partir do PDF de referência "Golf Ville" — pedido novo, saiu no vídeo de 21/08.<span class="dep novo">Novo</span></div>
+          <div class="acao"><b>Fechar e subir no ClickUp</b> quando a planilha e o CAD estiverem prontos — instrução final do Gustavo no vídeo de 21/08.<span class="dep aberto">Aberto</span></div>
+        </div>
+      </div>
+
+      <div class="dono ia">
+        <div class="dono-hd">Depende da IA</div>
+        <div class="dono-body">
+          <div class="acao"><b>Regenerar o deck inteiro</b> assim que o Viabil sair com faseamento de 12 meses e permuta de 20% — capa, título, telas 01 a 15 com os textos e gráficos revisados desta lista.<span class="dep bloqueado">Bloqueado até o B3 do Álvaro</span></div>
+          <div class="acao"><b>Montar a tela de perfil e velocidade de venda</b>, assim que o Álvaro definir qual referência usar.<span class="dep bloqueado">Bloqueado até decisão do Álvaro</span></div>
+          <div class="acao"><b>Montar o painel de exposição de caixa sobreponível</b>, nos moldes do estudo anterior, com os cenários comparáveis na mesma tela.<span class="dep bloqueado">Bloqueado até o Viabil novo</span></div>
+          <div class="acao"><b>Montar a comparação de indicadores</b> da tela 14 com o projeto de referência, assim que o Álvaro confirmar o nome e os indicadores chegarem.<span class="dep bloqueado">Bloqueado</span></div>
+          <div class="acao"><b>Atualizar o <code>fluxo_868_mensal.json</code></b> a partir do <code>fluxoest1.xlsx</code> novo, senão a tela da curva de caixa continua desenhando o fluxo antigo.<span class="dep bloqueado">Bloqueado até o B3</span></div>
+          <div class="acao"><b>Rodar R13 completo e republicar</b> no mesmo slug e mesmo salt do <code>painel-brisa/bs-ville</code>, cifrado, depois de cada rodada de correção.<span class="dep bloqueado">Recorrente, a cada entrega</span></div>
+          <div class="acao"><b>Remover os comentários de bastidor</b> ainda presentes nas telas aprovadas (06, 07, 08, 09, 10, 12) antes da próxima publicação para o Gustavo.<span class="dep aberto">Aberto</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-hd"><div class="sec-mark"></div><h2>Tela a tela — o que foi pedido e por quem</h2><div class="sec-line"></div></div>
+    <p class="sec-note">"Conferido" é o que verifiquei agora, lendo direto o
+    <code>deck/bs-ville-faseamento.html</code> publicado — não é o que consta nos planos anteriores.
+    <span class="quem g">Gustavo</span> marca pedido relatado pelo Álvaro (reunião de 20/08 ou vídeo de 21/08);
+    <span class="quem j">Judson</span> marca o comentário próprio dele, mandado por WhatsApp em 19/08.</p>
+    <div style="overflow-x:auto">
+    <table class="telas">
+      <thead><tr><th style="width:70px">Tela</th><th>Pedido</th><th style="width:70px">Quem</th><th style="width:110px">Status</th></tr></thead>
+      <tbody>
+        <tr><td class="tnum">Capa</td><td>Tirar "permuta física" e "as 8 fases" do título; simplificar para só "estudo de viabilidade"; trocar o nome do empreendimento de BS VILLE para Gulf Ville (grafia a confirmar).</td><td><span class="quem g">Gustavo</span></td><td><span class="status aberto">Aberto</span></td></tr>
+        <tr><td class="tnum">01</td><td>Tirar os valores; mudar o título; remover o painel "O que o estudo devolveu" inteiro; atualizar o nome para Gulf Ville; remover um comentário existente.</td><td><span class="quem g">Gustavo</span></td><td><span class="status aberto">Aberto</span></td></tr>
+        <tr><td class="tnum">02</td><td>Remover o cartão VGV Bruto e o quadro correspondente; incluir a tipologia do produto (área do apartamento, da torre, origem no PDF Golf Ville).</td><td><span class="quem g">Gustavo</span> <span class="quem j">Judson</span></td><td><span class="status aberto">Aberto</span></td></tr>
+        <tr><td class="tnum">03</td><td>Tirar a "base 15%" da tabela (preço/m², custo efetivo do terreno, despesas com terreno); simplificar o preço por m² para só área total; remover comentário.</td><td><span class="quem g">Gustavo</span></td><td><span class="status confirmar">Conferido: ainda com "(base 15%)" nas 3 linhas — pendente de fato, ao contrário do que o plano de 20/08 registrava</span></td></tr>
+        <tr><td class="tnum">04</td><td>Trocar o título para "Distribuição das 8 fases".</td><td><span class="quem j">Judson</span></td><td><span class="status feito">Feito em 20/08</span></td></tr>
+        <tr><td class="tnum">05</td><td>Ajustar ao cronograma novo quando o Viabil rodar com 12 meses; remover comentário.</td><td><span class="quem g">Gustavo</span> <span class="quem j">Judson</span></td><td><span class="status aberto">Aberto — depende do Viabil</span></td></tr>
+        <tr><td class="tnum">06</td><td>Conteúdo aprovado; só remover o(s) comentário(s).</td><td><span class="quem g">Gustavo</span></td><td><span class="status aberto">Remover comentário</span></td></tr>
+        <tr><td class="tnum">07</td><td>Trocar o gráfico de barras da área equivalente por fase para gráfico de pizza.</td><td><span class="quem g">Gustavo</span> <span class="quem j">Judson</span></td><td><span class="status aberto">Aberto</span></td></tr>
+        <tr><td class="tnum">08</td><td>Cartão "O número que decide" reescrito; pedido adicional no vídeo é remover o comentário associado.</td><td><span class="quem g">Gustavo</span> <span class="quem j">Judson</span></td><td><span class="status feito">Texto do cartão já corrigido no deck ao vivo — falta só remover o comentário</span></td></tr>
+        <tr><td class="tnum">09</td><td>Remover a tela inteira; a informação de exposição de caixa já existe mais à frente, na tela 12.</td><td><span class="quem g">Gustavo</span></td><td><span class="status aberto">Aberto — tela ainda presente no deck</span></td></tr>
+        <tr><td class="tnum">10</td><td>Conteúdo aprovado; só remover o comentário.</td><td><span class="quem g">Gustavo</span></td><td><span class="status aberto">Remover comentário</span></td></tr>
+        <tr><td class="tnum">11</td><td>Nenhum comentário identificado em nenhuma fonte.</td><td>—</td><td><span class="status sem">Sem pendência</span></td></tr>
+        <tr><td class="tnum">12</td><td>Reescrever de forma mais técnica; acrescentar gráfico de curva; remover comentário.</td><td><span class="quem g">Gustavo</span></td><td><span class="status aberto">Aberto</span></td></tr>
+        <tr><td class="tnum">13</td><td>Sem comentário isolado com segurança — pode estar embutido no bloco de fala da tela 12.</td><td><span class="quem g">Gustavo</span></td><td><span class="status confirmar">Confirmar com o Álvaro</span></td></tr>
+        <tr><td class="tnum">14</td><td>Comparar indicadores com projeto de referência (nome a confirmar); simplificar para mostrar só os KPIs usados.</td><td><span class="quem g">Gustavo</span></td><td><span class="status aberto">Aberto — depende do Álvaro identificar o projeto</span></td></tr>
+        <tr><td class="tnum">15</td><td>Simplificação adicional — "não precisa ter isso aqui".</td><td><span class="quem g">Gustavo</span></td><td><span class="status aberto">Aberto</span></td></tr>
+        <tr><td class="tnum">Encerra&shy;mento</td><td>Nunca discutido em nenhuma das fontes — o vídeo de 21/08 termina na tela 15, antes de chegar aqui.</td><td>—</td><td><span class="status sem">Sem informação</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-hd"><div class="sec-mark"></div><h2>Fora do deck</h2><div class="sec-line"></div></div>
+    <p class="sec-note">Pedidos do Gustavo que não são sobre uma tela específica, ditos depois do deck no vídeo de 21/08 (05:54–06:54), mais o que já vinha da reunião de 20/08.</p>
+    <div class="al">
+      <div class="al-i"><div class="al-s"></div><div class="al-b"><div class="al-t">Viabil — exposição de caixa</div><div class="al-x">Rodar o cenário de faseamento com a menor exposição de caixa possível, comparado ao valor atual.</div></div></div>
+      <div class="al-i"><div class="al-s"></div><div class="al-b"><div class="al-t">CAD</div><div class="al-x">Comentários pendentes no CAD, a fechar pelo Judson.</div></div></div>
+      <div class="al-i"><div class="al-s"></div><div class="al-b"><div class="al-t">Planilha de área</div><div class="al-x">Refazer a partir do PDF "Golf Ville", o empreendimento de referência.</div></div></div>
+      <div class="al-i"><div class="al-s"></div><div class="al-b"><div class="al-t">ClickUp</div><div class="al-x">Terminar e subir tudo no ClickUp — instrução final do Gustavo.</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-hd"><div class="sec-mark"></div><h2>Pontos de atenção</h2><div class="sec-line"></div></div>
+    <div class="al">
+      <div class="al-i cr"><div class="al-s"></div><div class="al-b"><div class="al-t">Grafia do nome novo</div><div class="al-x">O vídeo traz três pronúncias diferentes para o mesmo empreendimento — "Gulf Ville", "Golf Villa" e "golfe vila" — sem grafia oficial confirmada. Precisa fechar com o Gustavo antes de renomear a capa e o título do deck.</div></div></div>
+      <div class="al-i"><div class="al-s"></div><div class="al-b"><div class="al-t">Trechos inaudíveis, marcados e não inventados</div><div class="al-x">Oito trechos da transcrição de 21/08 ficaram sem leitura segura nas duas passadas do Whisper: nome do projeto de referência da tela 14, um trecho de metodologia na tela 08, "tirar a cara de Excel" e um fechamento de frase na tela 12, a fronteira exata entre as telas 12 e 13, a contagem de unidades por bloco em 03:59–04:11 e um trecho isolado em 05:27–05:31. Lista completa em <code>TRANSCRICAO-COMENTARIOS-2026-08-21.md</code>.</div></div></div>
+      <div class="al-i"><div class="al-s"></div><div class="al-b"><div class="al-t">Cenário de 9 anos × cenário de 16 anos</div><div class="al-x">Ainda sem decisão se o cenário novo, de 9 anos com faseamento de 12 meses, substitui o de 16 anos já publicado, ou se os dois seguem juntos para o Gustavo.</div></div></div>
+      <div class="al-i"><div class="al-s"></div><div class="al-b"><div class="al-t">Pavimento suprimido (D4)</div><div class="al-x">Se entrar nesta rodada, o VGV sai de R$ 1,045 bilhão para cerca de R$ 1,200 bilhão — não é ajuste de planilha, é outro produto e refaz o estudo inteiro.</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-hd"><div class="sec-mark"></div><h2>Fontes</h2><div class="sec-line"></div></div>
+    <div class="fontes">
+      Reunião com o Gustavo, 20/08/2026, 20h14–20h48 — <code>reuniao-2026-08-20/ESTADO.md</code><br>
+      Comentários do Judson por WhatsApp, 19/08/2026 — <code>PLANO-CONSOLIDADO-2026-08-20.md</code>, Bloco C<br>
+      Vídeo de reconstrução, Álvaro e Judson, 21/08/2026 — <code>TRANSCRICAO-COMENTARIOS-2026-08-21.md</code><br>
+      Deck ao vivo conferido nesta data — <code>deck/bs-ville-faseamento.html</code><br>
+      Pedido de hoje (perfil e velocidade de venda) — relato direto do Álvaro, 21/08/2026
+    </div>
+  </section>
+
+</main>
+
+<footer>BS VILLE · Brisa Empreendimentos · relatório interno de organização de trabalho — não é material para envio externo</footer>
+
+</body>
+</html>
